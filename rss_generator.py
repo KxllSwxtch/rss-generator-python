@@ -1,18 +1,15 @@
 import feedparser
 
-url = 'https://t.me/s/netflix'
+test_url = 'https://news.google.com/search?q=bussiness&hl=en-US&gl=US'
 
 
 def main():
-    try:
-        # url_to_parse = str(input('Enter the url to get the RSS: '))
-        parsed_feed = feedparser.parse(url)
-        entries = parsed_feed['entries']
-        feed = parsed_feed['feed']
-        print(feed['summary'])
-    except:
-        print("An error occured")
+    d = feedparser.parse(test_url)
+    dct = {}
+    for key in d:
+        d[key] = key
+    print(dct)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
